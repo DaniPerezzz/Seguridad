@@ -20,7 +20,7 @@ rsync -rv ~/origen/ ~/backups/destino/
 rsync -av ~/origen/ ~/backups/destino/
 ```
 
-`-r` solo copia contenido recursivamente. `-a`  además conserva permisos, dueño, grupo, fecha y enlaces. Compara con `ls -l` en origen/destino.
+`-r` solo copia contenido recursivamente. `-a`  conserva permisos, dueño, grupo, fecha y enlaces.
 
 
 ## 2. Borrar archivo en origen y repetir copia
@@ -33,7 +33,7 @@ rsync -av ~/origen/ ~/backups/destino/
 
 
 
-El archivo sigue en destino: rsync no borra por defecto.
+El archivo sigue en destino, rsync no borra por defecto.
 
 ## 3. Espejo exacto
 
@@ -51,7 +51,7 @@ rm ~/origen/grande.dat
 rsync -av --delete --backup --backup-dir=~/backups/versiones_antiguas ~/origen/ ~/backups/destino/
 ```
 
-Guarda en otro directorio la versión anterior de lo que se sobrescribe o borra, en vez de perderla.
+Guarda la versión anterior de lo que se sobrescribe o borra, en vez de perderla.
 
 ![img](./img/4.png)
 
@@ -81,4 +81,4 @@ crontab -e
 ```
 ![img](./img/8.png)
 
-Con contraseña esto fallará al ejecutarse solo; hace falta clave SSH (`ssh-keygen` + `ssh-copy-id`).
+Con contraseña esto fallará al ejecutarse, hace falta clave SSH (`ssh-keygen` + `ssh-copy-id`).
